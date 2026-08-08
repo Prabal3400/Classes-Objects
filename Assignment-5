@@ -1,0 +1,48 @@
+#Assng 5 - Covering concepts of all 4 assignments
+
+class Student:
+    def __init__(self,st_name,roll_no,marks):
+        self.st_name=st_name
+        self.roll_no=roll_no
+        self.marks=marks
+    def add_mark(self):
+        total=0
+        for i in self.marks:
+            total+=i
+        return total
+    def get_average(self):
+        avg=self.add_mark()/len(self.marks)
+        return avg
+    def get_grade(self):
+        if self.get_average()>=90:
+            return 'A'
+        elif self.get_average()>=75 and self.get_average()<90:
+            return 'B'
+        elif self.get_average()>=50 and self.get_average()<75:
+            return 'C'
+        elif self.get_average()<50:
+            return 'Fail'
+    def is_pass(self):
+        if self.get_grade() =='Fail':
+            return "Fail"
+        else:
+            return "Pass"
+    def display_report(self):
+        print("-------REPORT CARD --------")
+        print("Name   :",    self.st_name)
+        print("Roll No:",    self.roll_no)
+        print("Marks  :",    self.marks)
+        print("Total. :",    self.add_mark())
+        print("Grade. :",    self.get_grade())
+        print("Result.:",    self.is_pass())
+
+def main():
+    s1=Student("Prabal",43,[97,99,98])
+    s2=Student("Sharvari",12,[92,91,87])
+    s3=Student("Dev",34,[88,72,90])
+    s1.display_report()
+    print()
+    s2.display_report()
+    print()
+    s3.display_report()
+main()
