@@ -1,0 +1,30 @@
+Assgn 4 - calling one function from another function
+
+class BankAccount:
+    def __init__(self,bhn,bal):
+        self.bhn=bhn
+        self.bal=bal
+    def deposit(self,amt):
+        if self.is_valid_amt(amt):
+            self.bal+=amt
+        print("Amount of Rs.",amt,"successfully deposited")
+    def withdraw(self,amt):
+        if self.is_valid_amt(amt) and self.bal>=amt:
+            self.bal-=amt
+        else:
+            print("Insufficient Balance")
+    def is_valid_amt(self,amt):
+        if amt>0:
+            return amt>0
+    def check_balance(self):
+        print("Balance in account of bhn is", self.bal)
+
+b1=BankAccount("Prabal",5000)
+b2=BankAccount("Aman",1000)
+b3=BankAccount("Joshu",0)
+b1.deposit(4000)
+b2.withdraw(500)
+b3.deposit(10500)
+b1.check_balance()
+b2.check_balance()
+b3.check_balance()
