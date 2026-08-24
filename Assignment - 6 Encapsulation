@@ -1,0 +1,40 @@
+# Assgn-6 Encapsulation
+
+class Bank_Account:
+    def __init__(self,name,acc_no,bal):
+        self.name=name
+        self.acc_no=acc_no
+        self.__bal=bal
+    def deposit(self,amt):
+        if amt>0:
+            self.__bal+=amt
+            print("Deposit Successful")
+        else:
+            print("Invalid Amount")
+    def withdraw(self,amt):
+        if amt<0:
+            print("Invalid Amount")
+        elif amt>self.__bal:
+            print("Insufficient Balance")
+        else:
+            self.__bal-=amt
+            print("Withdrawal Successful")
+    def display_balance(self):
+        return self.__bal
+
+def main():
+    s1=Bank_Account("Ram",12345,4000)
+    s2=Bank_Account("Shyam",9876,500000)
+    s3=Bank_Account("Stuti",1981,80000)
+    s4=Bank_Account("Don",3142,21000)
+    print(s1.display_balance())
+    print(s2.display_balance())
+    print(s3.display_balance())
+    print(s4.display_balance())
+
+    s1.deposit(1000)
+    print("New Balance:",s1.display_balance())
+
+    s2.withdraw(10000)
+    print("New Balance:",s2.display_balance())
+main()
