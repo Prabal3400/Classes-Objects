@@ -41,8 +41,6 @@ def main():
     s2=Student("Sharvari",12,[92,91,87])
     s3=Student("Dev",34,[88,72,90])
     s1.display_report()
-    print()
     s2.display_report()
-    print()
     s3.display_report()
 main()
