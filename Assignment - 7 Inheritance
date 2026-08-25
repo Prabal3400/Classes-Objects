@@ -1,0 +1,37 @@
+# Assgn-7 Inheritance
+
+class Employee:
+    def __init__(self,empid,name,salary):
+        self.empid=empid
+        self.name=name
+        self.salary=salary
+    def display_details(self):
+        print("Name:",self.name)
+        print("Employee ID:",self.empid)
+        print("Salary:",self.salary)
+    def calculate_bonus(self):
+        return self.salary*0.05
+class Developer(Employee):
+    def calculate_bonus(self):
+        return self.salary*0.10
+class Manager(Employee):
+    def calculate_bonus(self):
+        return self.salary*0.20  
+
+def main():
+    emp=Employee("Rahul",101,50000)
+    dev=Developer("Aman",102,60000)
+    manager=Manager("Priya",103,80000)
+
+    print("Employee:")
+    emp.display_details()
+    print("Bonus:",emp.calculate_bonus())
+
+    print("Developer:")
+    dev.display_details()
+    print("Bonus:",dev.calculate_bonus())
+
+    print("Manager:")
+    manager.display_details()
+    print("Bonus:",manager.calculate_bonus())
+main()
