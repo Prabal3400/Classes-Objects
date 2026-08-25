@@ -1,0 +1,29 @@
+# Assign - 8 Polymorphism
+
+class Payment:
+    def make_payment(self,amount):
+        pass
+class UPI(Payment):
+    def make_payment(self,amount):
+        print("Paid Rs.", amount, "using UPI") 
+
+class CreditCard(Payment):
+    def make_payment(self,amount):
+        print("Paid Rs.", amount, "using Credit Card") 
+
+class NetBanking(Payment):
+    def make_payment(self,amount):
+        print("Paid Rs.", amount, "using Net Banking") 
+
+def main():
+    choice = input("Choose payment method:")
+
+    if choice == "UPI":
+        payment=UPI()
+    elif choice == "CARD":
+        payment=CreditCard()
+    elif choice == "NETBANKING":
+        payment=Netbanking()
+    payment.make_payment(1000)
+
+main()
