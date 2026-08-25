@@ -1,0 +1,33 @@
+#Ecommerce system
+
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def make_payment(self,amount):
+        pass
+class UPI(Payment):
+    def make_payment(self,amount):
+        print("Paid Rs.", amount, "using UPI") 
+
+class CreditCard(Payment):
+    def make_payment(self,amount):
+        print("Paid Rs.", amount, "using Credit Card") 
+
+class NetBanking(Payment):
+    def make_payment(self,amount):
+        print("Paid Rs.", amount, "using Net Banking") 
+
+class Product:
+    def __init__(self,name,price):
+        self.name=name
+        self.price=price
+    def display_product(self):
+        print(self.name, "-Rs.", self.price)
+
+class Cart:
+    def __init__(self):
+        self.products=[]
+    def add_product(self,product):
+        self.products.append(product)
+        print(product.name,"added to cart")
